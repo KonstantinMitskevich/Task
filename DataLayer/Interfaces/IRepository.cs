@@ -7,7 +7,7 @@ using DataLayer.Entities;
 
 namespace DataLayer.Interfaces
 {
-    public interface IRepository<T>  where T : class
+    public interface IRepository<T>  where T : class // generic Repository
     {
         IEnumerable<T> GetAll();
         Task Create(T item);
