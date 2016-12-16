@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ExecutorViewModel>
+@using Task.Models
+<h2>All Executors</h2>
+
+<table class="table table-striped">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SurName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            Delete
+        </th>
+        <th>
+            Edit
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(it => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(it => item.SurName)
+            </td>
+            <td>
+                @Html.DisplayFor(it => item.LastName)
+            </td>
+            <td>
+                @using (Html.BeginForm("DeleteExecutor", "Home", FormMethod.Post))
+                {
+                    @Html.Hidden("id", item.ExecutorId)
+                    <input type="submit" value="Delete" />
+                }
+            </td>
+            <td>
+                @using (Html.BeginForm("CreateExecutor", "Home", FormMethod.Get))
+                {
+                    @Html.Hidden("id", item.ExecutorId)
+                    <input type="submit" value="Edit" />
+                }
+            </td>
+        </tr>
+    }
+
+</table> 
+
+<div class="form-group">
+    @using (Html.BeginForm("CreateExecutor", "Home", FormMethod.Get))
+    {
+        <input type="submit" value="Add executor" />
+    }
+</div> 

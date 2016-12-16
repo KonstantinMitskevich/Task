@@ -1,0 +1,11 @@
+C:\Users\Exim\Documents\Visual Studio 2013\Projects\WPF\Task\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Exim\Documents\Visual Studio 2013\Projects\WPF\Task\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\Exim\Documents\Visual Studio 2013\Projects\WPF\Task\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Exim\Documents\Visual Studio 2013\Projects\WPF\Task\BusinessLayer\bin\Debug\AutoMapper.dll
+C:\Users\Exim\Documents\Visual Studio 2013\Projects\WPF\Task\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\Exim\Documents\Visual Studio 2013\Projects\WPF\Task\BusinessLayer\bin\Debug\Ninject.dll
+C:\Users\Exim\Documents\Visual Studio 2013\Projects\WPF\Task\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\Exim\Documents\Visual Studio 2013\Projects\WPF\Task\BusinessLayer\bin\Debug\AutoMapper.xml
+C:\Users\Exim\Documents\Visual Studio 2013\Projects\WPF\Task\BusinessLayer\bin\Debug\Ninject.xml
+C:\Users\Exim\Documents\Visual Studio 2013\Projects\WPF\Task\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\Exim\Documents\Visual Studio 2013\Projects\WPF\Task\BusinessLayer\obj\Debug\BusinessLayer.pdb
