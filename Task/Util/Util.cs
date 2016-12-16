@@ -9,7 +9,7 @@ using BusinessLayer.Operations;
 
 namespace Task.Util
 {
-    public class NinjectDependencyResolver : IDependencyResolver
+    public class NinjectDependencyResolver : IDependencyResolver // using Ninject to bind dependencies
     {
         private IKernel kernel;
         public NinjectDependencyResolver(IKernel kernelParam)
@@ -27,7 +27,7 @@ namespace Task.Util
         }
         private void AddBindings()
         {
-            kernel.Bind<IOperationInterface>().To<Operations>();
+            kernel.Bind<IOperationInterface>().To<Operations>(); // bind IOperationInterface interface to Operations
         }
     }
 }

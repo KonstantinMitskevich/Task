@@ -16,13 +16,13 @@ namespace DataLayer.Repositories
     {
 
         private SqlConnection con;
-        public void Connection()
+        public void Connection() // get connection string
         {
             string constr = ConfigurationManager.ConnectionStrings["TaskConnection"].ToString();
             con = new SqlConnection(constr);
         }
 
-        public async Task Create(Executor item)
+        public async Task Create(Executor item) // create an executor item
         {
             Connection();
             SqlCommand com = new SqlCommand("AddNewExecutor", con);
@@ -45,7 +45,7 @@ namespace DataLayer.Repositories
            
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(int id) // delete an executor item
         {
             Connection();
             SqlCommand com = new SqlCommand("DeleteExecutorById", con);
@@ -66,7 +66,7 @@ namespace DataLayer.Repositories
             }
         }
 
-        public Executor Get(int id)
+        public Executor Get(int id) // find an executor item
         {
             Connection();
             SqlCommand com = new SqlCommand("GetExecutorById", con);
@@ -92,7 +92,7 @@ namespace DataLayer.Repositories
             return executor;
         }
 
-        public IEnumerable<Executor> GetAll()
+        public IEnumerable<Executor> GetAll() // get all executor items
         {
             Connection();
             List<Executor> ExecutorList = new List<Executor>();
@@ -120,7 +120,7 @@ namespace DataLayer.Repositories
             return ExecutorList;
         }
 
-        public async Task Edit(Executor item)
+        public async Task Edit(Executor item) // edit an executor item
         {
             Connection();
             SqlCommand com = new SqlCommand("EditExecutor", con);

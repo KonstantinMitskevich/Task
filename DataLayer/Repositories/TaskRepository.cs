@@ -15,12 +15,12 @@ namespace DataLayer.Repositories
     class TaskRepository : IRepository<Taskk>
     {
         private SqlConnection con;
-        public void Connection()
+        public void Connection() // constructor, creates connction string 
         {
             string constr = ConfigurationManager.ConnectionStrings["TaskConnection"].ToString();
             con = new SqlConnection(constr);
         }
-        public async Task Create(Taskk item)
+        public async Task Create(Taskk item) // creat a new Task item
         {
             Connection();
             SqlCommand com = new SqlCommand("AddNewTask", con);
@@ -46,7 +46,7 @@ namespace DataLayer.Repositories
             }
         }
 
-        public Taskk Get(int id)
+        public Taskk Get(int id) // get a Task item
         {
             Connection();
             SqlCommand com = new SqlCommand("GetTaskById", con);
@@ -75,7 +75,7 @@ namespace DataLayer.Repositories
             return task;
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(int id) // delete a Task item
         {
             Connection();
             SqlCommand com = new SqlCommand("DeleteTaskById", con);
@@ -96,7 +96,7 @@ namespace DataLayer.Repositories
             }
         }
 
-        public IEnumerable<Taskk> GetAll()
+        public IEnumerable<Taskk> GetAll() // get all Task items
         {
             Connection();
             List<Taskk> TaskList = new List<Taskk>();
@@ -127,7 +127,7 @@ namespace DataLayer.Repositories
             return TaskList;
         }
 
-        public async Task Edit(Taskk item)
+        public async Task Edit(Taskk item) // edit a Task item
         {
             Connection();
             SqlCommand com = new SqlCommand("EditTask", con);

@@ -12,15 +12,15 @@ using System.Configuration;
 
 namespace BusinessLayer.Infrastructure
 {
-    public class ServiceModule : NinjectModule
+    public class ServiceModule : NinjectModule // module to provide dependency between IUnitOfWork and UnitOfWork
     {
         private SqlConnection con;
-        public ServiceModule(string connection)
+        public ServiceModule(string connection) 
         {
             string constr = ConfigurationManager.ConnectionStrings["TaskConnection"].ToString();
             con = new SqlConnection(constr);
         }
-        public override void Load()
+        public override void Load() // binding IUnitOfWork interface to UnitOfWork class via Ninject
         {
             Bind<IUnitOfWork>().To<UnitOfWork>().WithConstructorArgument(con);
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Infrastructure
 {
-    public class ValidationException : Exception
+    public class ValidationException : Exception // custom exception validation
     {
         public string Property { get; protected set; }
         public ValidationException(string message, string prop) : base(message)

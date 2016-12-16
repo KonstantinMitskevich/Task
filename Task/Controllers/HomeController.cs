@@ -26,7 +26,7 @@ namespace Task.Controllers
         }
 
         [HttpGet]
-        public ActionResult CreateExecutor(int id = 0)
+        public ActionResult CreateExecutor(int id = 0) 
         {
             ExecutorViewModel executorNewModel = new ExecutorViewModel();
             if (id != 0)
@@ -42,7 +42,7 @@ namespace Task.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateExecutor(ExecutorViewModel model)
+        public ActionResult CreateExecutor(ExecutorViewModel model)  // create an executor
         {
             if (string.IsNullOrEmpty(model.Name))
             {
@@ -75,7 +75,7 @@ namespace Task.Controllers
         }
 
         [HttpGet]
-        public ActionResult CreateTask(int id = 0)
+        public ActionResult CreateTask(int id = 0) 
         {
             TaskViewModel taskModel = new TaskViewModel();
             if (id != 0)
@@ -93,7 +93,7 @@ namespace Task.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateTask(TaskViewModel model)
+        public ActionResult CreateTask(TaskViewModel model) // create a task
         {
             if (string.IsNullOrEmpty(model.Name))
             {
@@ -131,7 +131,6 @@ namespace Task.Controllers
 
         public PartialViewResult GetAllTasks()
         {
-         //   Mapper.Initialize(t => t.CreateMap<TaskDTO,TaskViewModel>());
             List<TaskViewModel> taskViewModel = new List<TaskViewModel>();
             foreach (TaskDTO task in operationInterface.GetAllTasks())
             {
@@ -150,7 +149,6 @@ namespace Task.Controllers
 
         public PartialViewResult GetAllExecutors()
         {
-           // Mapper.Initialize(t => t.CreateMap<TaskDTO, TaskViewModel>());
             List<ExecutorViewModel> execViewModel = new List<ExecutorViewModel>();
             foreach (ExecutorDTO exec in operationInterface.GetAllExecutors())
             {

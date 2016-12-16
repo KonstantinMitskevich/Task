@@ -18,7 +18,7 @@ namespace BusinessLayer.Operations
     {
         IUnitOfWork db { get; set; }
 
-        public Operations(IUnitOfWork uow)
+        public Operations(IUnitOfWork uow) 
         {
             db = uow;
         }

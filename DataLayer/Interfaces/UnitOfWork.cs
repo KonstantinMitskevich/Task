@@ -12,18 +12,18 @@ using DataLayer.Repositories;
 
 namespace DataLayer.Interfaces
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork // use Unit Of Work pattern to accumulate all Repoitories
     {
         private SqlConnection con;
         private TaskRepository taskRepository;
         private ExecutorRepository executorRepository;
 
-        public void Connection()
+        public void Connection() // get conncection string
         {
             string constr = ConfigurationManager.ConnectionStrings["TaskConnection"].ToString();
             con = new SqlConnection(constr);
         }
-        public IRepository<Executor> Executors
+        public IRepository<Executor> Executors // property to get Executor Repository 
         {
             get
             {
@@ -33,7 +33,7 @@ namespace DataLayer.Interfaces
             }
         }
 
-        public IRepository<Taskk> Tasks
+        public IRepository<Taskk> Tasks // property to get Task Repository 
         {
             get
             {
@@ -43,13 +43,8 @@ namespace DataLayer.Interfaces
             }
         }
 
-        public void Save()
-        {
-            throw new NotImplementedException();
-        }
-
         private bool disposed = false;
-        public virtual void Dispose(bool disposing)
+        public virtual void Dispose(bool disposing) // Using Dispose to clean resourses 
         {
             if (!this.disposed)
             {
